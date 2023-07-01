@@ -397,12 +397,7 @@ function deleteIn() {
   }
 }
 // console.log(blockID)
-modeBtn.addEventListener("click", () => {
-  const block = document.querySelectorAll(".block")
-  // document.body.style.color = "white"
-  document.body.style.backgroundColor = " #2b313d"
-  block.style.backgroundColor = "black"
-})
+
 let stat = document.getElementById("stat")
 let info = localStorage.getItem("userInfo")
 info = JSON.parse(info)
@@ -445,3 +440,60 @@ function draft() {
   // createBlock() //creates the new block
   discardForm() //resets the form and closes the overlay/backdrop
 }
+//intially the mode is light
+// let mode = "light"
+// localStorage.setItem("mode", mode)
+// console.log(localStorage.getItem("mode"))
+
+modeBtn.addEventListener("click", (e) => {
+  // localStorage.setItem("mode", "dark")
+
+  // console.log(e.target.src)
+  if (
+    e.target.tagName === "IMG" &&
+    e.target.src === "http://127.0.0.1:5500/images/icon-moon.svg"
+  ) {
+    // document.body.style.color = "white"
+    document.body.style.backgroundColor = " #2b313d"
+    document.body.style.color = "white"
+    modeBtn.innerHTML = `<img src="./images/icon-sun.svg" alt="" srcset="">`
+    const filter = document.getElementById("filter")
+    // console.log(filter)
+    filter.style.color = "white"
+    for (
+      let index = 0;
+      index < JSON.parse(localStorage.getItem("userInfo")).length;
+      index++
+    ) {
+      const block = document.getElementById(`block${index}`)
+      // console.log(block)
+      block.style.backgroundColor = "#373b53"
+      // console.log(e.target)
+    }
+    // localStorage.setItem("mode", "light")
+    // console.log(localStorage.getItem("mode"))
+  } else if (
+    e.target.tagName === "IMG" &&
+    e.target.src === "http://127.0.0.1:5500/images/icon-sun.svg"
+  ) {
+    document.body.style.backgroundColor = "rgb(248, 248, 251)"
+
+    document.body.style.color = "black"
+    modeBtn.innerHTML = `<img src="./images/icon-moon.svg" alt="" srcset="">`
+    const filter = document.getElementById("filter")
+    // console.log(filter)
+    filter.style.color = "black"
+    for (
+      let index = 0;
+      index < JSON.parse(localStorage.getItem("userInfo")).length;
+      index++
+    ) {
+      const block = document.getElementById(`block${index}`)
+      // console.log(block)
+      block.style.backgroundColor = "white"
+      // console.log(e.target)
+    }
+  }
+
+  // console.log(localStorage.getItem("mode"))
+})
