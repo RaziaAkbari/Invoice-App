@@ -1,0 +1,258 @@
+<!--786-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <main class="d-flex">
+        <section id="menu-bar"  >
+            <div class="logo ">
+                <img src="./images/logo.svg" alt="" srcset="">
+            </div>
+            <div class="bottom ">
+                <div class="moon" id="modeBtn" >
+                <img src="./images/icon-moon.svg" alt="" srcset="">
+                </div>
+                <div class="user">
+                    <img src="./images/image-avatar.jpg" alt="user image" srcset="" height="40px" width="40px" class="img">
+                </div>
+            </div>
+        
+        </section>
+        
+        <section id="main" class="mt-5 container">
+        
+                <div class="heading  d-flex justify-content-between" id="heading">
+                    <div class="invoice me-2">
+                        <p class="fs-2 fw-bold m-0   ">Invoices</p>
+                        <p id="total-invoice" class="fs-8 text-secondary m-0 ">No invoices</p>
+                    </div>
+                    
+                        <div class="d-flex justify-content-between gap-3">
+                            <div class="dropdown mt-2">
+                                <a class="btn " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <span class="fw-bold">filter by status </span>
+                                   <img src="./images/icon-arrow-down.svg" alt="">
+                                </a>
+                            
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Paid</a></li>
+                                  <li><a class="dropdown-item" href="#">Pending</a></li>
+                                  <li><a class="dropdown-item" href="#">Draft</a></li>
+                                </ul>
+                              </div>
+                            
+                            <button class="btn btn-primary d-flex justify-content-center align-items-center gap-3 pt-2  pb-2 rounded-5 ps-2 pe-2 h-75" id="new-invoice"
+                            type="button">
+                                <div class="plus bg-white rounded-circle d-flex justify-content-center align-items-center p-2 m-0"><img src="./images/icon-plus.svg" alt="" srcset="" class="m-1"> </div>
+                                <p class="m-0 me-1">New Invoice</p></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center mt-5 mb-5 illustration flex-column" id="display">
+                    <img src="./images/illustration-empty.svg" alt="" srcset="" class="d-block">
+                    
+                        <p class="fw-bold fs-4 mt-5 text-center ">There is nothing here</p>
+                        <p class="text-secondary text-center">Create an invoice by clicking the <br>
+                        New Invoice button and get started</p>
+                    
+                </div>
+        </section> <!--Main Section is done-->
+
+
+
+        <!--Backdrop and the form-->
+        <div class="backdrop ">
+            <form class="model p-4" id="form">
+             <h5 class="fw-bold m-3 mb-0">New Invoice</h5>
+             <br>
+             <div class="m-3 mt-0 bottomCust" >
+                 <p class="fw-bold text-primary">Bill From</p>
+                 <label for="">Street Address
+                     <br>
+                     <input type="text" name="Street-AddressF" id="" autofocus>
+                 </label>
+                     <div class="adress d-flex flex-wrap gap-1 justify-content-between">
+                         <div>
+                             <label for="">City
+                                 <br>
+                             <input type="text" name="cityF" id="" autofocus>
+                         </label>
+                         </div>
+                             <div>
+                                 <label for="">Post Code
+                                     <br>
+                                     <input type="text" name="post-codeF" id="" autofocus>
+                                 </label>
+                             </div>
+                                 <div>
+                                     <label for="">Country
+                                         <br>
+                                         <input type="text" name="countryF" id="" autofocus>
+                                     </label>
+                                 </div>
+                     </div>
+                     <p class="fw-bold text-primary mt-4">Bill To</p>
+                     <label for="" class="client">Client's Name
+                         <br>
+                         <input type="text" name="nameC" id="" autofocus>
+                     </label>
+                     <br>
+                     <label for="" class="client">Client's Email 
+                         <br>
+                         <input type="email" name="emailC" id="" autofocus placeholder="example@domain.com" class="text-dark ">
+                        </label>
+                    
+                     <br>
+                     <label for="" class="client">Street Address
+                         <br>
+                         <input type="text" name="street-addressC" id="" autofocus>
+                     </label> 
+                     <div class="adress d-flex flex-wrap gap-1 justify-content-between">
+                        <div>
+                            <label for="">City
+                                <br>
+                            <input type="text" name="cityC" id="" autofocus>
+                        </label>
+                        </div>
+                            <div>
+                                <label for="">Post Code
+                                    <br>
+                                    <input type="text" name="post-codeC" id="" autofocus>
+                                </label>
+                            </div>
+                                <div>
+                                    <label for="">Country
+                                        <br>
+                                        <input type="text" name="countryC" id="" autofocus>
+                                    </label>
+                                </div>
+                        </div>
+                    <br>
+
+                    <br> 
+                <div class="d-flex justify-content-center gap-3 ">
+                
+                    <div class="date">
+                        <label class="text-secondary the-label">
+                            Invoice Date
+                        
+                        <br>
+                        <input type="date" name="invoice-date" id="" class="text-secondary date">
+                    </label>
+
+                    
+                    </div>
+
+                    <div class="date">
+                        <label class="text-secondary 
+                        the-label" >
+                            Payment Terms
+                        
+                        <br>
+                        <input type="datetime" name="payment-term" id="">
+                    </label>
+                    </div>
+
+                </div>
+                <br>
+                <label class="text-secondary project">Project Description
+                <input type="text" name="project-description" id="" class="project">
+                </label>
+                <br> <br>
+                <p class="fw-bold text-secondary">
+                    Item List
+                </p>
+
+                <!--Table starts here-->
+                    <div class="table-responsive">
+                        <table class="table">
+                         <thead>
+                          <tr>
+                           <th>Item Name</th>
+                           <th>Qty.</th>
+                           <th>Price</th>
+                           <th>Total</th>
+                           <th></th>
+                          </tr>
+                         </thead>
+                         
+                        <tbody id="itemList" >
+                          <tr class="row1">
+                           <td>
+                            <input type="text" placeholder="Banner Design" class="" name="task">
+                        </td>
+                        <td>
+                            <input type='number' value=00 min='0' name="qty">
+                        </td>
+                        <td>
+                            <input type="number" name="number"  value="00" class="text" min='0'>
+                        </td>
+                           <td>00</td>
+
+                           <td>
+                            <button type='button' class='btn' onclick='deleteRow(this)'>
+                                <img src="./images/icon-delete.svg" alt="">
+                        </button>
+                        </td>
+
+                    </tr>
+                        <!-- <tr class="row1">
+                           <td>
+                            <input type="text" placeholder="Email design">
+                        </td>
+                           <td>
+                            <input type='number' value='00' min='0' name="qty" >
+                        </td>
+                        <td>
+                            <input type="number" name="" id="" value="00" class="text" min='0' name="number">
+                        </td>
+                        <td>00</td>
+
+
+                        <td>
+                            <button type='button' class='btn' onclick='deleteRow(this)'><img src="./images/icon-delete.svg" alt=""></button>
+                        </td>
+                      </tr> -->
+                        
+                    </tbody>
+                    
+                </table>
+                <button class="w-100 p-2 border-0 rounded-5 text-primary fw-bold add-item" id="add-item"><img src="./images/icon-plus.svg" alt="" srcset=""> add new item</button>
+            </div>
+                   
+        <div class="d-flex justify-content-between mt-3">
+           <button class="btn btn-outline-danger rounded-5" onclick='discardForm()' >Discard</button>
+           <div class="gap-3 d-flex">
+            <button class="btn btn-outline-secondary rounded-5" onclick="draft()">Save as Draft</button>
+            <button class="btn btn-outline-primary rounded-5" type="submit" id="send">Save and Send</button>
+          
+
+            
+           </div>
+        </div>
+        
+        
+              </form> <!--Form closed-->
+            </div> <!--Model is closed-->
+           
+           </div> <!--backdrop is closed--> 
+          
+    </main>
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+:root {
+  --white: #fff;
+  --black: #333333;
+}
+body {
+  background: var(--white);
+}
+body.dark {
+  --white: #333;
+  --black: #fff;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  height: 100vh;
+  background-color: rgb(248, 248, 251);
+  /* overflow-x: hidden; */
+}
+#menu-bar {
+  background-color: #373b53;
+}
+@media screen and (min-width: 768px) {
+  #menu-bar {
+    width: 6rem;
+    /* height: 100%; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .bottom {
+    flex-direction: column;
+  }
+  .user {
+    border-top: 1px solid #ffffff44;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .moon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .img {
+    margin: 15%;
+  }
+  .logo {
+    width: 100%;
+    height: 13%;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  #main {
+    margin: auto;
+    width: 50%;
+    height: auto;
+  }
+  .backdrop.visible {
+    opacity: 1;
+    width: 100%;
+    left: 6rem;
+  }
+  body {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  * {
+    font-size: 12px;
+  }
+  body {
+    height: 100vh;
+    overflow: scroll;
+  }
+  #menu-bar {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 4%;
+    /* position: fixed; */
+  }
+  .bottom {
+    display: flex;
+
+    gap: 10%;
+    width: 100px;
+  }
+  .bottomCust {
+    margin-bottom: 8rem !important;
+  }
+  .user {
+    padding-left: 20%;
+    border-left: 1px solid #ffffff8f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .moon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo {
+    width: 5rem;
+    height: 100%;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  .backdrop.visible {
+    opacity: 1;
+    top: 5rem;
+    width: 100%;
+  }
+  .model {
+    width: 80% !important;
+    height: 100% !important;
+  }
+}
+.img {
+  border-radius: 50%;
+}
+.moon {
+  margin: 10%;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #858bb2;
+}
+
+.backdrop {
+  position: fixed;
+  height: 100vh;
+  width: 0;
+  top: 0;
+  left: 0;
+  background: #00000080;
+  backdrop-filter: blur(0.5px);
+  opacity: 0;
+  transition: width 0.4s ease, opacity 0.4s ease 0.2s;
+  overflow: auto;
+}
+
+.model {
+  position: absolute;
+  width: 50%;
+  overflow-y: scroll;
+  background-color: white;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  /* overflow-y: auto; */
+}
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="datetime"],
+.text {
+  color: black;
+  font-weight: bold;
+  font-size: 11px;
+  outline: none;
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px rgb(161, 161, 161) solid;
+  width: 100% !important;
+}
+input[type="date"],
+input[type="datetime"] {
+  width: 100%;
+}
+input[type="number"] {
+  width: 40px;
+  padding: 5px;
+  color: black;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.date {
+  width: 100%;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 900;
+  margin: 15px;
+  color: gray;
+}
+th {
+  font-size: 12px;
+}
+.project,
+.client,
+.the-label {
+  width: 95%;
+}
