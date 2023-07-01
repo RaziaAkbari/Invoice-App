@@ -451,7 +451,7 @@ modeBtn.addEventListener("click", (e) => {
   // console.log(e.target.src)
   if (
     e.target.tagName === "IMG" &&
-    e.target.src === "http://127.0.0.1:5500/images/icon-moon.svg"
+    e.target.src.includes("/images/icon-moon.svg")
   ) {
     // document.body.style.color = "white"
     document.body.style.backgroundColor = " #2b313d"
@@ -474,7 +474,7 @@ modeBtn.addEventListener("click", (e) => {
     // console.log(localStorage.getItem("mode"))
   } else if (
     e.target.tagName === "IMG" &&
-    e.target.src === "http://127.0.0.1:5500/images/icon-sun.svg"
+    e.target.src.includes("/images/icon-sun.svg")
   ) {
     document.body.style.backgroundColor = "rgb(248, 248, 251)"
 
